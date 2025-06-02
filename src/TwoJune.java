@@ -1,4 +1,6 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class TwoJune {
@@ -33,6 +35,24 @@ public class TwoJune {
         }
         return max;
     }
+    public static List<Boolean> KidsWithCandies(int[] candies, int extraCandies) {
+        int n = candies.length;
+        int max = Integer.MIN_VALUE;
+        for(int i = 0; i<n; i++){
+            if (candies[i]>max){
+                max = candies[i];
+            }
+        }
+        List<Boolean> ans = new ArrayList<Boolean>();
+        for(int i =0; i<n; i++){
+            if((candies[i] += extraCandies) >= max){
+                ans.add(true);
+            }else {
+                ans.add(false);
+            }
+        }
+        return ans;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[][] twodim = new int[3][3];
@@ -51,5 +71,6 @@ public class TwoJune {
         System.out.println("The Concatenated Array is: "+Arrays.toString(conctenateArray(nums)));
         System.out.println("The Running ArraysSum is: "+Arrays.toString(RunningSum(nums)));
         System.out.println("The Max Wealth is: "+maxWealth(twodim));
+        System.out.println(KidsWithCandies(nums, 3));
     }
 }
