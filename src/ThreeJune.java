@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class ThreeJune {
@@ -12,6 +13,20 @@ public class ThreeJune {
         }
         return sum;
     }
+    public static int[] smallerNumbersThanCurrent(int[] nums){
+        int n = nums.length;
+        int [] small = new int [n];
+        for(int i=0; i<n; i++){
+            int sm = 0;
+            for(int j=0; j<n; j++){
+                if(nums[j] < nums[i]){
+                    sm++;
+                }
+                small[i] = sm;
+            }
+        }
+        return small;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int[] nums = new int[5];
@@ -20,5 +35,6 @@ public class ThreeJune {
             nums[i] = sc.nextInt();
         }
         System.out.println("the no. of good pair is: " + goodPair(nums));
+        System.out.println("the smallest number is: " + Arrays.toString(smallerNumbersThanCurrent(nums)));
     }
 }
