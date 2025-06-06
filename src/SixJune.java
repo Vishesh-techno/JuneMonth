@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class SixJune {
@@ -13,6 +14,21 @@ public class SixJune {
         }
         return ms;
     }
+    public static int[][] flipAndInvertImage(int[][] image) {
+        int n = image.length;
+        int m = image[0].length;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < (m + 1) / 2; j++) {
+                // Swap and invert elements at j and (m - 1 - j)
+                int temp = image[i][j] ^ 1;
+                image[i][j] = image[i][m - 1 - j] ^ 1;
+                image[i][m - 1 - j] = temp;
+            }
+        }
+
+        return image;
+    }
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -26,5 +42,9 @@ public class SixJune {
         }else {
         System.out.println("Highest altitude is " + highest_altitude(nums));
         }
+        int[][] img = {{1,0,0,0}, {1,1,0,0},{1,0,1,0},{1,0,0,1}};
+//        Arrays.toString(img);
+        System.out.println("Original image: "+Arrays.deepToString(img));
+        System.out.println("the inverted of given: "  + Arrays.deepToString(flipAndInvertImage(img)));
     }
 }
