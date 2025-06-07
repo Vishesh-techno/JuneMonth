@@ -28,6 +28,20 @@ public class SevenJune {
         }
         return ans;
     }
+    public static int findNum2(int[] arr){
+        int ans = 0;
+        for(int num : arr){
+            int count = 0;
+            while(num > 0){
+                num /= 10;
+                count++;
+            }
+            if(count % 2 == 0){
+                ans++;
+            }
+        }
+        return ans;
+    }
     public static void main(String[] args) {
         int[]  nums = {2,5,48,9,7,6,52,55225,4,5,2,456,321,165,4321,32,1,3};
         int[][] indices = {{0,1},{1,1}};
@@ -35,6 +49,7 @@ public class SevenJune {
         int res = oddCells(n, m, indices);
         System.out.println(res);
         System.out.println(findNum(nums));
+        System.out.println(findNum2(nums));
 
     }
 }
