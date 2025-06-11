@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class ElevenJune {
     public static int maxSum(int[] arr){
 //        int min = Integer.MAX_VALUE;
@@ -23,6 +25,18 @@ public class ElevenJune {
         System.out.println(max+" is maximum from array");
         return max;
     }
+    public static int[] twoSum(int[] arr, int target){
+        int n = arr.length;
+        int[] ans = new int[n];
+        for(int i =0; i<n-1; i++){
+            for(int j = i+1; j<n; j++){
+                if(arr[i]+arr[j] == target){
+                    ans = new int[]{i,j};
+                }
+            }
+        }
+        return ans;
+    }
 
     public static void main(String[] args) {
         int[]  arr = new int[10];
@@ -35,6 +49,7 @@ public class ElevenJune {
         System.out.println();
         System.out.println("the sum of all the elements in array is: "+ maxSum(arr));
         System.out.println(maximum(arr));
+        System.out.println("the sum of target indexes is: "+ Arrays.toString(twoSum(arr, 9)));
 
 
     }
