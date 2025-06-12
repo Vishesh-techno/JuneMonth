@@ -26,16 +26,40 @@ public class TwelveJune {
         return maxDiff;
     }
 
+    public static int removeDuplicates(int[] nums) {
+        if (nums.length == 0) {
+            return 0;
+        }
+        int i = 1;
+        for (int j = 1; j < nums.length; j++) {
+            if (nums[j] != nums[i - 1]) {
+                nums[i] = nums[j];
+                i++;
+            }
+        }
+        return i;
+    }
+
     public static void main(String[] args) {
         int[] nums = new int[10];
         int[] arr = {9, 9, 9};
         for (int i = 0; i < nums.length; i++) {
             nums[i] = i + 10;
         }
+        int[] Array = {0, 0, 1, 1, 1, 2, 2, 3, 3, 4};
         System.out.println(Arrays.toString(nums));
         System.out.print("the answer of array after adding 1: ");
         System.out.println(Arrays.toString(plusOne(arr)));
         System.out.println(maxDiffadjacents(nums));
+        int k = removeDuplicates(Array);
+        System.out.print("The array after removing duplicates is: [");
+        for (int i = 0; i < k; i++) {
+            System.out.print(Array[i]);
+            if (i < k - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
 
     }
 }
