@@ -59,7 +59,7 @@ public class ElevenJune {
         }
         System.out.println(minPrice + " is minimum(Buy Day) from array");
         System.out.println(sellProfit + " is maximum(Sell Day) from array");
-        System.out.println("the difference between sell and buy day is: "+"["+sellProfit+"-"+minPrice + "]"+" = "+ maxProfit);
+        System.out.println("the difference between sell and buy day is: " + "[" + sellProfit + "-" + minPrice + "]" + " = " + maxProfit);
         return maxProfit;
     }
 
