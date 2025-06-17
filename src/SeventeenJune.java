@@ -42,6 +42,21 @@ public class SeventeenJune {
         }
         return count;
     }
+    public static int[] smallerNumberThanCurrent(int[] nums){
+        int n = nums.length;
+        int[] ans = new int[n];
+        int sm = 0;
+        for (int i = 0; i < n; i++) {
+            sm = 0;
+            for (int j = 0; j < n; j++) {
+                if(nums[i]>nums[j]){
+                    sm++;
+                }
+            }
+            ans[i] = sm;
+        }
+        return ans;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the size of array: ");
@@ -65,5 +80,7 @@ public class SeventeenJune {
         System.out.print("the highest candies with kid is shown: ");
         System.out.println(kidsWithCandies(nums1, 5));
         System.out.println("The number of good pairs is: "+goodPairs(nums));
+        System.out.print("the smaller number than current is: ");
+        System.out.println(Arrays.toString(smallerNumberThanCurrent(nums1)));
     }
 }
