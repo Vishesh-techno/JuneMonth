@@ -30,6 +30,18 @@ public class SeventeenJune {
         }
         return result;
     }
+    public static int goodPairs(int[] nums){
+        int n = nums.length;
+        int count = 0;
+        for(int i=0; i<n-1; i++){
+            for(int j=i+1; j<n; j++){
+                if(nums[i] == nums[j]){
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the size of array: ");
@@ -52,5 +64,6 @@ public class SeventeenJune {
         int[] nums1 = shuffleArray(nums, 5);
         System.out.print("the highest candies with kid is shown: ");
         System.out.println(kidsWithCandies(nums1, 5));
+        System.out.println("The number of good pairs is: "+goodPairs(nums));
     }
 }
