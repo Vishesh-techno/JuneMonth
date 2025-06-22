@@ -32,9 +32,14 @@ public class TwentyTwoJune {
 
         return result;
     }
+    public static int mySqrt(int x) {
+        int ans = (int)Math.sqrt(x);
+        return ans;
+    }
     public static void main(String[] args) {
         String s = "abcdefghi";
         System.out.println(subtractProductAndSum(234));
         System.out.println(Arrays.toString(divideString(s, 3, 'x')));
+        System.out.println(mySqrt(45));
     }
 }
