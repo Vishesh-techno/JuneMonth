@@ -4,14 +4,15 @@ public class TwentyTwoJune {
     public static int subtractProductAndSum(int n) {
         int sum = 0;
         int product = 1;
-        while(n>0){
-            int digit = n%10;
+        while (n > 0) {
+            int digit = n % 10;
             sum += digit;
             product *= digit;
-            n/=10;
+            n /= 10;
         }
-        return product-sum;
+        return product - sum;
     }
+
     public static String[] divideString(String s, int k, char fill) {
         int n = s.length();
         int groups = (n + k - 1) / k;
@@ -32,10 +33,12 @@ public class TwentyTwoJune {
 
         return result;
     }
+
     public static int mySqrt(int x) {
-        int ans = (int)Math.sqrt(x);
+        int ans = (int) Math.sqrt(x);
         return ans;
     }
+
     public static void main(String[] args) {
         String s = "abcdefghi";
         System.out.println(subtractProductAndSum(234));
