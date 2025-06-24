@@ -1,4 +1,5 @@
 import java.util.*;
+
 public class TwentyFourJune {
     public static List<Integer> findKDistantIndices(int[] nums, int key, int k) {
         List<Integer> res = new ArrayList<>();
@@ -15,8 +16,27 @@ public class TwentyFourJune {
         }
         return res;
     }
+
+    public static boolean isPerfectSquare(int num) {
+        int start = 0;
+        int end = num;
+        if (num == 1) {
+            return true;
+        }
+        while (start < end) {
+            if (num == (int) (start * start)) {
+                return true;
+                // break;
+            } else {
+                start++;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
-        int[] nums = {3,4,9,1,3,9,5};
-        System.out.println(findKDistantIndices(nums,9, 1));
+        int[] nums = {3, 4, 9, 1, 3, 9, 5};
+        System.out.println(findKDistantIndices(nums, 9, 1));
+        System.out.println(isPerfectSquare(16));
     }
 }
