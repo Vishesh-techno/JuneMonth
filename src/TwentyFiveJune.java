@@ -36,10 +36,27 @@ public class TwentyFiveJune {
         }
         return letters[end];
     }
+    public static int findKthPositive(int[] arr, int k) {
+        int start = 0;
+        int end = arr.length-1;
+        while(start<=end){
+            int mid = start + (end-start)/2;
+            int missing = arr[mid] - (mid + 1);
+            if (missing < k) {
+                start =  mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+
+        return start + k;
+    }
     public static void main(String[] args) {
         System.out.println(arrangeCoins(10));
         char[] lett = {'a','b','z'};
+        int[] arr = {2,3,4,7,11};
         System.out.println(nextGreatestLetter(lett, 'a'));
         System.out.println(nextGreatestLetterOptimal(lett, 'z'));
+        System.out.println(findKthPositive(arr, 8));
     }
 }
